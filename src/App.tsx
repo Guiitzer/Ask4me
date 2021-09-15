@@ -1,15 +1,14 @@
-import React from "react";
+// import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
+
+import './styles/global.scss'
 
 function App() {
-  const [count, setCount] = React.useState<number>(0)
-
-  return (
-    <>
-<button onClick={()=> setCount( count + 1 )}>Click Me!</button>
-<div>{count}</div>
-
-    </>
-  );
+return (
+<>
+  <NewRoom />
+</>
+);
 }
 
 export default App;
