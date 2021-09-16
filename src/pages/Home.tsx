@@ -32,7 +32,7 @@ export function Home() {
     alert("Sala não existente.");
     return;
   }
-  history.push(`/rooms/${roomCode}`);
+  history.push(`/room/${roomCode}`);
 }
 
   return (
