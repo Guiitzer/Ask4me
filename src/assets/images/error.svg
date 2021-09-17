@@ -1,0 +1,9 @@
+<svg width="23.999999999999996" height="23.999999999999996" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <circle id="svg_1" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#ff0000" r="9.00375" cy="11.71811" cx="12"/>
+  <line stroke="#ff0000" fill="none" stroke-linecap="round" stroke-linejoin="round" id="svg_5" y2="15.7343" x2="15.74202" y1="7.85474" x1="8.25798" stroke-width="1.5"/>
+  <line transform="rotate(90 12 11.7603)" stroke="#ff0000" fill="none" stroke-linecap="round" stroke-linejoin="round" id="svg_6" y2="15.42608" x2="15.98175" y1="8.09446" x1="8.01825" stroke-width="1.5"/>
+ </g>
+</svg>

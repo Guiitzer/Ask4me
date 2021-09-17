@@ -88,6 +88,34 @@ main {
     }
   }
 
+  .user-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+
+    img{
+      width: 35px;
+      border-radius: 50%;
+    }
+
+    span {
+      margin-left: 8px;
+      color: #737380;
+      font-size: 14px;
+    }
+
+    button{
+      margin-left: 8px;
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 2px solid #fff3;
+      cursor: pointer;
+    }
+
+  }
+
   .create-room {
     margin-top: 64px;
     height: 50px;

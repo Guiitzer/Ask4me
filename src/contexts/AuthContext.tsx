@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import firebase from "firebase/compat";
 import { auth } from "../services/firebase";
+import { useHistory } from "react-router-dom";
 
 // Declaração das tipagens
 type UserType = {
@@ -11,6 +12,7 @@ type UserType = {
 type AuthContextType = {
   user: UserType | undefined;
   signInWithGoogle: () => Promise<void>;
+  // SignOut: () => Promise<void>;
 };
 type ChildrenType = {
   children: React.ReactNode;
@@ -22,6 +24,7 @@ export const AuthContext = createContext({} as AuthContextType);
 // Criação do Provedor para o contexto;
 export function AuthContextProvider({ children }: ChildrenType) {
   const [user, setUser] = useState<UserType>();
+  // const history = useHistory()
 
   // recuperando estado da autenticação no firebase;
   useEffect(() => {
@@ -60,6 +63,11 @@ export function AuthContextProvider({ children }: ChildrenType) {
       });
     }
   }
+
+  // async function SignOut() {
+  //   await auth.signOut();
+  //   history.push(`/`)
+  // }
 
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>

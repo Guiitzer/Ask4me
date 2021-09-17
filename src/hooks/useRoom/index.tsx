@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { database } from "../services/firebase";
-import { useAuth } from "./useAuth";
+import { database } from "../../services/firebase";
+import { useAuth } from "../useAuth";
 
 type QuestionsType = {
   id: string;
@@ -12,7 +12,7 @@ type QuestionsType = {
   isAnswered: boolean;
   isHighLighted: boolean;
   likeCount: number;
-  hasLiked: boolean;
+  likeId: string | undefined;
 };
 
 type FirebaseQuestionsType = Record<
@@ -52,7 +52,7 @@ export default function useRoom(roomId: string) {
             isHighLighted: value.isHighLighted,
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
-            hasLiked: Object.values(value.likes ?? {}).some(like=> like.authorId === user?.id)
+            likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
           };
         }
       );
