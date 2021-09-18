@@ -1,8 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useHistory } from "react-router";
 
-import "./index.scss";
-
 import illustrationImg from "../../assets/images/illustration.svg";
 import logoImg from "../../assets/images/logo.svg";
 import googleImage from "../../assets/images/google-icon.svg";
@@ -58,9 +56,12 @@ export function Home() {
           <img src={logoImg} alt="ask4me" />
           {user ? (
           <>
-            <div className="user-info">
-              <img src={user.avatar} alt={user.name} />
-              <span>{user.name}</span>
+            <div className="logged">
+                 <span>logged as</span>
+                <div>
+                  <img src={user.avatar} alt={user.name} />
+                  <span>{user.name}</span>
+                </div>
               </div>
           </>
           ): ''}

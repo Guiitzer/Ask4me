@@ -38,6 +38,17 @@ export function NewRoom() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="ask4me" />
+          {user ? (
+          <>
+            <div className="logged">
+                 <span>logged as</span>
+                <div>
+                  <img src={user.avatar} alt={user.name} />
+                  <span>{user.name}</span>
+                </div>
+              </div>
+          </>
+          ): ''}
           <h2> Crie uma nova sala </h2>
           <form onSubmit={handleCreateRoom}>
             <input

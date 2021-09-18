@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import firebase from "firebase/compat";
 import { auth } from "../services/firebase";
-import { useHistory } from "react-router-dom";
 
 // Declaração das tipagens
 type UserType = {

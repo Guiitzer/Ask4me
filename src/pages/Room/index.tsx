@@ -1,4 +1,4 @@
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { FormEvent, useState } from "react";
 
 import Tooltip from "@mui/material/Tooltip";
@@ -12,14 +12,14 @@ import useRoom from "../../hooks/useRoom";
 import { database } from "../../services/firebase";
 
 import "./index.scss";
+import ExitButton from "../../components/ExitButton";
 
 type RoomParams = {
   id: string;
 };
 
 export function Room() {
-  const { user } = useAuth();
-  const history = useHistory();
+  const { user, signInWithGoogle } = useAuth();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState("");
   const { question, title } = useRoom(params.id);
@@ -67,12 +67,12 @@ export function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Ask4me" />
+          <div>
+            <ExitButton />
+            <img src={logoImg} alt="Ask4me" />
+          </div>
           <RoomCode code={params.id} />
         </div>
-        <button onClick={()=>{
-          history.push(`/`)
-        }}>🚪 SAIR</button>
       </header>
 
       <div className="question-area">
@@ -98,7 +98,7 @@ export function Room() {
           <div className="form-footer">
             {!user ? (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>
+                Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>
               </span>
             ) : (
               <div className="user-info">
